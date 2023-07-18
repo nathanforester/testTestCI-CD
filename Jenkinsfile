@@ -46,10 +46,8 @@ pipeline {
         stage('merge feature to dev') {
             steps {
                 sh '''
-                   git checkout origin/dev
+                   git checkout -f origin/dev
                    git merge origin/featureA
-                   git add .
-                   git commit -m "testing merge"
                    git push origin HEAD:dev
                    '''
             }
@@ -81,4 +79,4 @@ pipeline {
         }
         
     }
-}// some text
+}// some text here here
