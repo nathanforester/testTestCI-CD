@@ -27,11 +27,11 @@ pipeline {
             }
         }
 
-        // stage('docker compose') {
-        //     steps {
-        //         sh 'docker-compose build'
-        //     }
-        // }
+        stage('docker compose') {
+            steps {
+                sh 'docker-compose build'
+            }
+        }
 
         stage('git credentials') {
             steps {
