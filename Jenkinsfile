@@ -46,16 +46,6 @@ pipeline {
         stage('merge feature to dev') {
             steps {
                 sh '''
-                   git rm main/__pycache__/app.cpython-38.pyc
-	               git rm main/application/__pycache__/__init__.cpython-38.pyc
-                   git rm main/application/__pycache__/routes.cpython-38.pyc
-                   git rm main/tests/__pycache__/__init__.cpython-38.pyc
-                   git rm main/tests/__pycache__/test_unit.cpython-38-pytest-7.4.0.pyc
-                   git rm prime/__pycache__/app.cpython-38.pyc
-                   git rm prime/application/__pycache__/__init__.cpython-38.pyc
-                   git rm prime/application/__pycache__/routes.cpython-38.pyc
-                   git rm prime/tests/__pycache__/__init__.cpython-38.pyc
-                   git rm prime/tests/__pycache__/test_unit.cpython-38-pytest-7.4.0.pyc
                    git checkout origin/dev
                    git merge origin/featureA
                    git add .
