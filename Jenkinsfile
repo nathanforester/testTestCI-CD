@@ -48,8 +48,6 @@ pipeline {
                 sh '''
                    git checkout -f origin/dev
                    git merge origin/featureA
-                   git add .
-                   git commit -m "testing merge"
                    git push origin HEAD:dev
                    '''
             }
