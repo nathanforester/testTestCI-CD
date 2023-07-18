@@ -46,6 +46,7 @@ pipeline {
         stage('merge feature to dev') {
             steps {
                 sh '''
+                   git clean  -d  -f .
                    git checkout origin/dev
                    git merge origin/featureA
                    git add .
