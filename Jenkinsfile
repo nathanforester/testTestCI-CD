@@ -75,7 +75,7 @@ pipeline {
             steps {
                 sh '''
                    #!/bin/bash
-                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@52.56.130.161 << EOF
+                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@18.134.210.176 << EOF
                    git clone https://github.com/nathanforester/testTestCI-CD.git
                    sudo docker-compose -f /home/ubuntu/testTestCI-CD/docker-compose.yaml down
                    sudo docker system prune -a -f
