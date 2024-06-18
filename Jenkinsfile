@@ -7,14 +7,6 @@ pipeline {
 		    }
     
       stages {
-         stage('Install dependencies') {
-            steps {
-                sh '''
-                      sudo apt install python3-pip -y
-		      python3 -m pip install -r ./prime/requirements.txt
-                   '''
-            }
-        }
 
         stage('Unit Tests P1') {
             steps {
