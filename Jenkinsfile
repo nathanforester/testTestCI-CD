@@ -77,7 +77,8 @@ pipeline {
             steps {
                 sh '''
                    #!/bin/bash
-                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@18.134.210.176 << EOF
+		   export hostIP=$(curl ifconfig.me)
+                   ssh -i /home/jenkins/.ssh/myKey -o StrictHostKeyChecking=no ubuntu@$hostIP << EOF
                    git clone https://github.com/nathanforester/testTestCI-CD.git
                    sudo docker-compose -f /home/ubuntu/testTestCI-CD/docker-compose.yaml down
                    sudo docker system prune -a -f
